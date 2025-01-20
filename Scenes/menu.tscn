@@ -1,0 +1,52 @@
+[gd_scene load_steps=4 format=3 uid="uid://b03f3jq8g8n2r"]
+
+[ext_resource type="Script" path="res://Scripts/menu.gd" id="1_5hakn"]
+[ext_resource type="PackedScene" uid="uid://b5adnylpguwhk" path="res://Prefabs/animated_background.tscn" id="1_cssf2"]
+[ext_resource type="FontFile" uid="uid://cacdi5io7dsig" path="res://Assets/Bonus/kenvector_future.ttf" id="3_skn8l"]
+
+[node name="Menu" type="Node2D"]
+script = ExtResource("1_5hakn")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Title" type="Label" parent="CanvasLayer"]
+layout_direction = 2
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -349.0
+offset_top = -223.0
+offset_right = 316.0
+offset_bottom = -149.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0.374139, 0.374139, 0.374139, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 65
+text = "SPACE SHOOTER"
+
+[node name="StartButton" type="Button" parent="CanvasLayer"]
+offset_left = 280.0
+offset_top = 415.0
+offset_right = 424.0
+offset_bottom = 511.0
+theme_override_fonts/font = ExtResource("3_skn8l")
+theme_override_font_sizes/font_size = 22
+text = "INICIAR"
+
+[node name="QuitButton" type="Button" parent="CanvasLayer"]
+offset_left = 640.0
+offset_top = 415.0
+offset_right = 784.0
+offset_bottom = 511.0
+theme_override_fonts/font = ExtResource("3_skn8l")
+theme_override_font_sizes/font_size = 22
+text = "SAIR"
+
+[node name="AnimatedBackground" parent="." instance=ExtResource("1_cssf2")]
+
+[node name="EnemySpawnTimer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://djtmijgh1trxs"]
+
+[ext_resource type="Texture2D" uid="uid://d37esrhpcc6eq" path="res://Assets/Backgrounds/darkPurple.png" id="1_mpe27"]
+
+[node name="Background" type="TextureRect"]
+texture_repeat = 2
+offset_right = 256.0
+offset_bottom = 256.0
+texture = ExtResource("1_mpe27")
+stretch_mode = 1

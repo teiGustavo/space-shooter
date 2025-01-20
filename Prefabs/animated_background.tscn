@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5adnylpguwhk"]
+
+[ext_resource type="Script" path="res://Scripts/animated_background.gd" id="1_udnud"]
+[ext_resource type="Texture2D" uid="uid://d37esrhpcc6eq" path="res://Assets/Backgrounds/darkPurple.png" id="2_vlwt0"]
+
+[node name="AnimatedBackground" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_udnud")
+
+[node name="Background1" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 256.0
+texture = ExtResource("2_vlwt0")
+stretch_mode = 1
+
+[node name="Background2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_top = -256.0
+offset_right = 256.0
+texture = ExtResource("2_vlwt0")
+stretch_mode = 1
