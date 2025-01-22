@@ -1,7 +1,7 @@
 extends Node
 
 
-const ENEMY: Resource = preload("res://Prefabs/enemy.tscn")
+const ENEMY: Resource = preload("res://Prefabs/Characters/Enemies/enemy.tscn")
 const spawn_area_min_x: float = 0
 @onready var spawn_area_max_x: float = get_viewport().size.x
 

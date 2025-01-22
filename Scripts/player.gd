@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const LASER: Resource = preload("res://Prefabs/laser.tscn")
+const LASER: Resource = preload("res://Prefabs/Utils/laser.tscn")
 const SFX_LOSE: Resource = preload("res://Assets/Bonus/sfx_lose.ogg")
 const SFX_SHIELD_UP: Resource = preload("res://Assets/Bonus/sfx_shieldUp.ogg")
 const SCREEN_MARGIN: int = 60

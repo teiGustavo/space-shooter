@@ -1,7 +1,7 @@
 extends Node2D
 
-const ENEMY: Resource = preload("res://Prefabs/enemy.tscn")
-const LIFE_POWERUP = preload("res://Prefabs/life_powerup.tscn")
+const ENEMY: Resource = preload("res://Prefabs/Characters/Enemies/enemy.tscn")
+const LIFE_POWERUP = preload("res://Prefabs/PowerUps/life_powerup.tscn")
 @onready var hud: CanvasLayer = $HUD
 @onready var player: CharacterBody2D = $Player
 @onready var enemy_spawn_timer: Timer = $EnemySpawnTimer
