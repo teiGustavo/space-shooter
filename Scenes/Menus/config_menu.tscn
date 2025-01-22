@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://cf8bi1o8a4xta"]
+
+[ext_resource type="Script" path="res://Scripts/Menus/config_menu.gd" id="1_wgsjb"]
+[ext_resource type="PackedScene" uid="uid://b5adnylpguwhk" path="res://Prefabs/Utils/animated_background.tscn" id="2_8gbnp"]
+[ext_resource type="PackedScene" uid="uid://bduprecxktub5" path="res://Prefabs/Utils/UI/Buttons/mute_music_button.tscn" id="3_nlwo7"]
+[ext_resource type="PackedScene" uid="uid://vpiei14eobpd" path="res://Prefabs/Utils/UI/Buttons/return_button.tscn" id="3_tnqyc"]
+[ext_resource type="PackedScene" uid="uid://du5ges527ccno" path="res://Prefabs/Utils/UI/Buttons/mute_sounds_button.tscn" id="4_x4a3u"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0corh"]
+font_size = 65
+outline_size = 10
+outline_color = Color(0.372549, 0.372549, 0.372549, 1)
+
+[node name="ConfigMenu" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_wgsjb")
+
+[node name="AnimatedBackground" parent="." instance=ExtResource("2_8gbnp")]
+
+[node name="Title" type="Label" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 66.0
+offset_bottom = 140.0
+grow_horizontal = 2
+text = "CONFIGURAÇÕES"
+label_settings = SubResource("LabelSettings_0corh")
+horizontal_alignment = 1
+
+[node name="Buttons" type="HBoxContainer" parent="."]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = 31.0
+offset_bottom = 182.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 100
+alignment = 1
+
+[node name="MuteMusicButton" parent="Buttons" instance=ExtResource("3_nlwo7")]
+layout_mode = 2
+
+[node name="MuteSoundsButton" parent="Buttons" instance=ExtResource("4_x4a3u")]
+layout_mode = 2
+
+[node name="ReturnButton" parent="Buttons" instance=ExtResource("3_tnqyc")]
+layout_mode = 2

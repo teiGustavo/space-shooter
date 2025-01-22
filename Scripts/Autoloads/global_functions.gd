@@ -6,14 +6,6 @@ const spawn_area_min_x: float = 0
 @onready var spawn_area_max_x: float = get_viewport().size.x
 
 
-func play_sfx(sfx: Resource, increase_db: int = 0) -> void:
-	var sound: AudioStreamPlayer2D = AudioStreamPlayer2D.new()
-	sound.stream = sfx
-	get_tree().root.add_child(sound)
-	sound.volume_db = increase_db
-	sound.play()
-	sound.finished.connect(sound.queue_free)
-
 func get_numeral(number: int) -> Resource:
 	var numeral: Resource
 		

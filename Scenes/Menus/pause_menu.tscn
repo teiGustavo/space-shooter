@@ -1,0 +1,56 @@
+[gd_scene load_steps=8 format=3 uid="uid://bhihmdxgqpbxe"]
+
+[ext_resource type="PackedScene" uid="uid://b5adnylpguwhk" path="res://Prefabs/Utils/animated_background.tscn" id="1_xm2gd"]
+[ext_resource type="Script" path="res://Scripts/Menus/pause_menu.gd" id="1_y7cfb"]
+[ext_resource type="PackedScene" uid="uid://cdq6jiymlqywp" path="res://Prefabs/Utils/UI/Buttons/play_button.tscn" id="2_etg41"]
+[ext_resource type="PackedScene" uid="uid://cv5lo4kisd7u" path="res://Prefabs/Utils/UI/Buttons/config_button.tscn" id="3_teqf8"]
+[ext_resource type="PackedScene" uid="uid://5w4vvxb071c2" path="res://Prefabs/Utils/UI/Buttons/exit_button.tscn" id="4_8cia1"]
+[ext_resource type="PackedScene" uid="uid://cf8bi1o8a4xta" path="res://Scenes/Menus/config_menu.tscn" id="6_jieit"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_meotg"]
+font_size = 65
+outline_size = 10
+outline_color = Color(0.372549, 0.372549, 0.372549, 1)
+
+[node name="PauseMenu" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_y7cfb")
+
+[node name="AnimatedBackground" parent="." instance=ExtResource("1_xm2gd")]
+
+[node name="Title" type="Label" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 66.0
+offset_bottom = 140.0
+grow_horizontal = 2
+text = "JOGO PAUSADO"
+label_settings = SubResource("LabelSettings_meotg")
+horizontal_alignment = 1
+
+[node name="Buttons" type="HBoxContainer" parent="."]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = 31.0
+offset_bottom = 182.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 100
+alignment = 1
+
+[node name="PlayButton" parent="Buttons" instance=ExtResource("2_etg41")]
+layout_mode = 2
+custom_label = "Voltar a Jogar"
+
+[node name="ConfigButton" parent="Buttons" instance=ExtResource("3_teqf8")]
+layout_mode = 2
+
+[node name="ExitButton" parent="Buttons" instance=ExtResource("4_8cia1")]
+layout_mode = 2
+custom_label = "Desistir"
+
+[node name="ConfigMenu" parent="." instance=ExtResource("6_jieit")]
+layer = 2
+visible = false

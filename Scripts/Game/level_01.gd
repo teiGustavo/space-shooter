@@ -3,12 +3,8 @@ extends Node2D
 
 const ENEMY: Resource = preload("res://Prefabs/Characters/Enemies/enemy.tscn")
 const LIFE_POWERUP = preload("res://Prefabs/PowerUps/life_powerup.tscn")
-@onready var hud: CanvasLayer = $HUD
-@onready var player: CharacterBody2D = $Player
-@onready var enemy_spawn_timer: Timer = $EnemySpawnTimer
-@onready var life_powerup_spawn_timer: Timer = $LifePowerupSpawnTimer
-@onready var animated_background: Control = $AnimatedBackground
-@onready var spawn_area_max_x: float = get_viewport().size.x
+const spawn_area_min_x: float = 0
+
 @export var PLAYER_INITIAL_LIFE_COUNT: int = 3
 @export var ENEMY_INITIAL_SPEED: float = 4
 @export var ENEMY_MAX_SPEED: float = 15
@@ -16,9 +12,15 @@ const LIFE_POWERUP = preload("res://Prefabs/PowerUps/life_powerup.tscn")
 @export var BACKGROUND_INITIAL_SPEED: float = 200
 @export var BACKGROUND_MAX_SPEED: float = 400
 @export var BACKGROUND_SPEED_INCREASE: float = 4
-const spawn_area_min_x: float = 0
+
 var survival_time: float = 0.0
 
+@onready var hud: CanvasLayer = $HUD
+@onready var player: CharacterBody2D = $Player
+@onready var enemy_spawn_timer: Timer = $EnemySpawnTimer
+@onready var life_powerup_spawn_timer: Timer = $LifePowerupSpawnTimer
+@onready var animated_background: Control = $AnimatedBackground
+@onready var spawn_area_max_x: float = get_viewport().size.x
 
 func _ready() -> void:
 	PlayerVariables.life_count = PLAYER_INITIAL_LIFE_COUNT

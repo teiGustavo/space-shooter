@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://jnucmesayggx"]
+
+[ext_resource type="Script" path="res://Scripts/Utils/UI/Buttons/base_ui_button.gd" id="1_v4hk1"]
+[ext_resource type="Script" path="res://Scripts/Utils/UI/Buttons/base_ui_texture_button.gd" id="2_bkac0"]
+
+[node name="BaseUiButton" type="VBoxContainer"]
+theme_override_constants/separation = 5
+alignment = 1
+script = ExtResource("1_v4hk1")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 2
+stretch_mode = 3
+script = ExtResource("2_bkac0")

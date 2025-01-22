@@ -12,7 +12,7 @@ func _ready() -> void:
 	need = position.direction_to(direction)
 	look_at(direction)
 	connect("body_entered", _on_body_entered)
-	GlobalFunctions.play_sfx(SFX_LASER_1, 10)
+	SoundManager.play_sound(SFX_LASER_1)
 	
 func _physics_process(_delta: float) -> void:
 	position += need * speed

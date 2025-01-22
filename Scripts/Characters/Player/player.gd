@@ -89,17 +89,17 @@ func shoot() -> void:
 	add_sibling(laser)
 	
 func take_damage():
-	GlobalFunctions.play_sfx(SFX_LOSE, 10)
+	SoundManager.play_sound(SFX_LOSE)
 	PlayerVariables.decrease_score()
 	
 	if not IMMORTAL:
 		PlayerVariables.decrease_life()
 		
 		if PlayerVariables.life_count == 0:
-			get_tree().change_scene_to_file("res://Scenes/menu.tscn")
+			get_tree().change_scene_to_file("res://Scenes/Menus/main_menu.tscn")
 
 func increase_life():
-	GlobalFunctions.play_sfx(SFX_SHIELD_UP)
+	SoundManager.play_sound(SFX_SHIELD_UP)
 	PlayerVariables.increase_life()
 
 func detect_slide_collision() -> void:

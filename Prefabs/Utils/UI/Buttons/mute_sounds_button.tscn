@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://du5ges527ccno"]
+
+[ext_resource type="PackedScene" uid="uid://jnucmesayggx" path="res://Prefabs/Utils/UI/Buttons/base_ui_button.tscn" id="1_sfcjg"]
+[ext_resource type="Texture2D" uid="uid://jk80rly8uct5" path="res://Assets/Icons/sound-on.svg" id="2_re3i3"]
+[ext_resource type="Texture2D" uid="uid://baj0bb4jvixnx" path="res://Assets/Icons/sound-off.svg" id="3_ikfpv"]
+
+[node name="MuteSoundsButton" instance=ExtResource("1_sfcjg")]
+
+[node name="Label" parent="." index="0"]
+text = "Sons"
+
+[node name="TextureButton" parent="." index="1"]
+toggle_mode = true
+action_mode = 0
+texture_normal = ExtResource("2_re3i3")
+texture_pressed = ExtResource("3_ikfpv")

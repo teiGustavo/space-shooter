@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://vpiei14eobpd"]
+
+[ext_resource type="PackedScene" uid="uid://jnucmesayggx" path="res://Prefabs/Utils/UI/Buttons/base_ui_button.tscn" id="1_21dxa"]
+[ext_resource type="Texture2D" uid="uid://05jlyc21p6dr" path="res://Assets/Icons/return-button.svg" id="2_jr57y"]
+[ext_resource type="Texture2D" uid="uid://cw3dkwocumt7k" path="res://Assets/Icons/return-button-hover.svg" id="3_3g6yq"]
+
+[node name="ReturnButton" instance=ExtResource("1_21dxa")]
+
+[node name="Label" parent="." index="0"]
+text = "Voltar"
+
+[node name="TextureButton" parent="." index="1"]
+texture_normal = ExtResource("2_jr57y")
+texture_hover = ExtResource("3_3g6yq")

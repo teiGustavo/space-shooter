@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://cdq6jiymlqywp"]
+
+[ext_resource type="PackedScene" uid="uid://jnucmesayggx" path="res://Prefabs/Utils/UI/Buttons/base_ui_button.tscn" id="1_fucl2"]
+[ext_resource type="Texture2D" uid="uid://b176y1fjqgu52" path="res://Assets/Icons/play-button.svg" id="2_igmdo"]
+[ext_resource type="Texture2D" uid="uid://cxvcpu4m3ea8m" path="res://Assets/Icons/play-button-hover.svg" id="3_d033h"]
+
+[node name="PlayButton" instance=ExtResource("1_fucl2")]
+
+[node name="Label" parent="." index="0"]
+text = "Jogar"
+
+[node name="TextureButton" parent="." index="1"]
+texture_normal = ExtResource("2_igmdo")
+texture_hover = ExtResource("3_d033h")

@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://5w4vvxb071c2"]
+
+[ext_resource type="PackedScene" uid="uid://jnucmesayggx" path="res://Prefabs/Utils/UI/Buttons/base_ui_button.tscn" id="1_2jf8k"]
+[ext_resource type="Texture2D" uid="uid://0j7wpinlwayo" path="res://Assets/Icons/exit.svg" id="2_ebshu"]
+[ext_resource type="Texture2D" uid="uid://drtny5txlijln" path="res://Assets/Icons/exit-hover.svg" id="3_lo277"]
+
+[node name="ExitButton" instance=ExtResource("1_2jf8k")]
+
+[node name="Label" parent="." index="0"]
+text = "Sair"
+
+[node name="TextureButton" parent="." index="1"]
+texture_normal = ExtResource("2_ebshu")
+texture_hover = ExtResource("3_lo277")
