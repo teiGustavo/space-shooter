@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://jnucmesayggx"]
+
+[ext_resource type="Script" path="res://Scripts/Utils/base_ui_button.gd" id="1_6drpm"]
+
+[node name="BaseUiButton" type="VBoxContainer"]
+alignment = 1
+script = ExtResource("1_6drpm")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 2
+stretch_mode = 3

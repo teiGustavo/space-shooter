@@ -1,8 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://b03f3jq8g8n2r"]
+[gd_scene load_steps=10 format=3 uid="uid://b03f3jq8g8n2r"]
 
 [ext_resource type="Script" path="res://Scripts/menu.gd" id="1_5hakn"]
 [ext_resource type="PackedScene" uid="uid://b5adnylpguwhk" path="res://Prefabs/animated_background.tscn" id="1_cssf2"]
+[ext_resource type="Texture2D" uid="uid://b176y1fjqgu52" path="res://Assets/Icons/play-button.svg" id="3_dh4ox"]
 [ext_resource type="FontFile" uid="uid://cacdi5io7dsig" path="res://Assets/Bonus/kenvector_future.ttf" id="3_skn8l"]
+[ext_resource type="Texture2D" uid="uid://cxvcpu4m3ea8m" path="res://Assets/Icons/play-button-hover.svg" id="4_2wdwm"]
+[ext_resource type="Texture2D" uid="uid://bh525ph63o4ar" path="res://Assets/Icons/gear.svg" id="5_im7ia"]
+[ext_resource type="Texture2D" uid="uid://dkss05ym7jnrb" path="res://Assets/Icons/gear-hover.svg" id="6_pjafq"]
+[ext_resource type="Texture2D" uid="uid://0j7wpinlwayo" path="res://Assets/Icons/exit.svg" id="7_6hwlr"]
+[ext_resource type="Texture2D" uid="uid://drtny5txlijln" path="res://Assets/Icons/exit-hover.svg" id="8_x00iv"]
 
 [node name="Menu" type="Node2D"]
 script = ExtResource("1_5hakn")
@@ -16,9 +22,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -349.0
+offset_left = -576.0
 offset_top = -223.0
-offset_right = 316.0
+offset_right = 576.0
 offset_bottom = -149.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -26,24 +32,96 @@ theme_override_colors/font_outline_color = Color(0.374139, 0.374139, 0.374139, 1
 theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 65
 text = "SPACE SHOOTER"
+horizontal_alignment = 1
 
-[node name="StartButton" type="Button" parent="CanvasLayer"]
-offset_left = 280.0
-offset_top = 415.0
-offset_right = 424.0
-offset_bottom = 511.0
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -576.0
+offset_top = -260.0
+offset_right = 576.0
+offset_bottom = -140.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="StartButton" type="Button" parent="CanvasLayer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
 theme_override_fonts/font = ExtResource("3_skn8l")
 theme_override_font_sizes/font_size = 22
 text = "INICIAR"
 
-[node name="QuitButton" type="Button" parent="CanvasLayer"]
-offset_left = 640.0
-offset_top = 415.0
-offset_right = 784.0
-offset_bottom = 511.0
+[node name="QuitButton" type="Button" parent="CanvasLayer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
 theme_override_fonts/font = ExtResource("3_skn8l")
 theme_override_font_sizes/font_size = 22
 text = "SAIR"
+
+[node name="Buttons" type="HBoxContainer" parent="CanvasLayer"]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = 59.0
+offset_bottom = 209.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 100
+alignment = 1
+
+[node name="PlayButton" type="VBoxContainer" parent="CanvasLayer/Buttons"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="Label" type="Label" parent="CanvasLayer/Buttons/PlayButton"]
+layout_mode = 2
+text = "Jogar"
+horizontal_alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer/Buttons/PlayButton"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("3_dh4ox")
+texture_hover = ExtResource("4_2wdwm")
+
+[node name="ConfigButton" type="VBoxContainer" parent="CanvasLayer/Buttons"]
+layout_mode = 2
+theme_override_constants/separation = 5
+alignment = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/Buttons/ConfigButton"]
+layout_mode = 2
+text = "Configurações"
+horizontal_alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer/Buttons/ConfigButton"]
+layout_mode = 2
+texture_normal = ExtResource("5_im7ia")
+texture_hover = ExtResource("6_pjafq")
+stretch_mode = 3
+
+[node name="ExitButton" type="VBoxContainer" parent="CanvasLayer/Buttons"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="Label" type="Label" parent="CanvasLayer/Buttons/ExitButton"]
+layout_mode = 2
+text = "Sair"
+horizontal_alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer/Buttons/ExitButton"]
+layout_mode = 2
+texture_normal = ExtResource("7_6hwlr")
+texture_hover = ExtResource("8_x00iv")
 
 [node name="AnimatedBackground" parent="." instance=ExtResource("1_cssf2")]
 
