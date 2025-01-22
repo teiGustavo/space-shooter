@@ -1,3 +1,4 @@
+class_name AnimatedBackground
 extends Control
 
 

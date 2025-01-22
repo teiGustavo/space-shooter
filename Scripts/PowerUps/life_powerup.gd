@@ -1,3 +1,4 @@
+class_name LifePowerUp
 extends CharacterBody2D
 
 

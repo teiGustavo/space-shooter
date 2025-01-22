@@ -1,3 +1,4 @@
+class_name Level01
 extends Node2D
 
 const ENEMY: Resource = preload("res://Prefabs/Characters/Enemies/enemy.tscn")

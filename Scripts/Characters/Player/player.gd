@@ -1,3 +1,4 @@
+class_name Player
 extends CharacterBody2D
 
 const LASER: Resource = preload("res://Prefabs/Utils/laser.tscn")
