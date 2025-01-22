@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://ceuxflfgxgssl"]
 
-[ext_resource type="Script" path="res://Scripts/level_01.gd" id="1_il3we"]
+[ext_resource type="Script" path="res://Scripts/Game/level_01.gd" id="1_il3we"]
 [ext_resource type="PackedScene" uid="uid://b5adnylpguwhk" path="res://Prefabs/Utils/animated_background.tscn" id="3_wl6is"]
 [ext_resource type="PackedScene" uid="uid://ewykc6nn7r1b" path="res://Prefabs/Characters/Player/player.tscn" id="4_vtgi1"]
 [ext_resource type="PackedScene" uid="uid://cd7bx6wwi4e5r" path="res://Prefabs/Utils/UI/hud.tscn" id="4_xyj64"]

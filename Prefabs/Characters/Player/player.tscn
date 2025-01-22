@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://ewykc6nn7r1b"]
 
-[ext_resource type="Script" path="res://Scripts/player.gd" id="1_gxao3"]
+[ext_resource type="Script" path="res://Scripts/Characters/Player/player.gd" id="1_gxao3"]
 [ext_resource type="Texture2D" uid="uid://d17dwd3pvkly4" path="res://Assets/PNG/Effects/fire06.png" id="2_xa7dc"]
 [ext_resource type="Texture2D" uid="uid://cjdp2gxd1ksd" path="res://Assets/PNG/playerShip2_blue.png" id="2_yl25g"]
 

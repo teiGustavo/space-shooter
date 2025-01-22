@@ -17,8 +17,8 @@ config/icon="res://icon.png"
 
 [autoload]
 
-GlobalFunctions="*res://Scripts/global_functions.gd"
-PlayerVariables="*res://Scripts/player_variables.gd"
+GlobalFunctions="*res://Scripts/Autoloads/global_functions.gd"
+PlayerVariables="*res://Scripts/Autoloads/player_variables.gd"
 
 [display]
 
