@@ -2,7 +2,7 @@ extends Node
 
 
 const VOLUMES_FILE_PATH: String = "user://volumes.save"
-#const MUSIC: AudioStream = preload("res://Assets/Sounds/music.wav")
+const MUSIC: AudioStream = preload("res://Assets/Sounds/music.wav")
 
 var volumes: Dictionary = {
 	"ui": 1,
@@ -43,5 +43,4 @@ func _config_volumes() -> void:
 	SoundManager.set_ambient_sound_volume(volumes["ambient_sound"])
 
 func _play_backgorund_music() -> void:
-	#SoundManager.play_music(MUSIC)
-	pass
+	SoundManager.play_music(MUSIC)
