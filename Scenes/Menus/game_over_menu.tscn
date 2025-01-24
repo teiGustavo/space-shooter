@@ -49,7 +49,7 @@ layout_mode = 2
 
 [node name="ReturnButton" parent="Buttons" instance=ExtResource("5_1itqy")]
 layout_mode = 2
-custom_label = "Voltar ao Menu Principal"
+custom_label = "Menu Principal"
 
 [node name="ConfigMenu" parent="." instance=ExtResource("6_kxffs")]
 layer = 2
