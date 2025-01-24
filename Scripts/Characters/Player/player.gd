@@ -96,7 +96,7 @@ func take_damage():
 		PlayerVariables.decrease_life()
 		
 		if PlayerVariables.life_count == 0:
-			get_tree().change_scene_to_file("res://Scenes/Menus/main_menu.tscn")
+			get_tree().change_scene_to_file("res://Scenes/Menus/game_over_menu.tscn")
 
 func increase_life():
 	SoundManager.play_sound(SFX_SHIELD_UP)

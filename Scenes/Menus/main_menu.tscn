@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b5adnylpguwhk" path="res://Prefabs/Utils/animated_background.tscn" id="8_30v4r"]
 [ext_resource type="PackedScene" uid="uid://cf8bi1o8a4xta" path="res://Scenes/Menus/config_menu.tscn" id="9_ruepf"]
 
-[node name="Menu" type="Node2D"]
+[node name="MainMenu" type="Node2D"]
 process_mode = 3
 script = ExtResource("1_tas6b")
 

@@ -1,0 +1,56 @@
+[gd_scene load_steps=8 format=3 uid="uid://bjg1ai41nmduy"]
+
+[ext_resource type="Script" path="res://Scripts/Menus/game_over_menu.gd" id="1_5j81m"]
+[ext_resource type="PackedScene" uid="uid://b5adnylpguwhk" path="res://Prefabs/Utils/animated_background.tscn" id="2_i40oj"]
+[ext_resource type="PackedScene" uid="uid://cdq6jiymlqywp" path="res://Prefabs/Utils/UI/Buttons/play_button.tscn" id="3_6knj2"]
+[ext_resource type="PackedScene" uid="uid://cv5lo4kisd7u" path="res://Prefabs/Utils/UI/Buttons/config_button.tscn" id="4_ikk43"]
+[ext_resource type="PackedScene" uid="uid://vpiei14eobpd" path="res://Prefabs/Utils/UI/Buttons/return_button.tscn" id="5_1itqy"]
+[ext_resource type="PackedScene" uid="uid://cf8bi1o8a4xta" path="res://Scenes/Menus/config_menu.tscn" id="6_kxffs"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_meotg"]
+font_size = 65
+outline_size = 10
+outline_color = Color(0.372549, 0.372549, 0.372549, 1)
+
+[node name="GameOverMenu" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_5j81m")
+
+[node name="AnimatedBackground" parent="." instance=ExtResource("2_i40oj")]
+
+[node name="Title" type="Label" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 66.0
+offset_bottom = 140.0
+grow_horizontal = 2
+text = "GAME OVER"
+label_settings = SubResource("LabelSettings_meotg")
+horizontal_alignment = 1
+
+[node name="Buttons" type="HBoxContainer" parent="."]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = 31.0
+offset_bottom = 182.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 100
+alignment = 1
+
+[node name="PlayButton" parent="Buttons" instance=ExtResource("3_6knj2")]
+layout_mode = 2
+custom_label = "Jogar Novamente"
+
+[node name="ConfigButton" parent="Buttons" instance=ExtResource("4_ikk43")]
+layout_mode = 2
+
+[node name="ReturnButton" parent="Buttons" instance=ExtResource("5_1itqy")]
+layout_mode = 2
+custom_label = "Voltar ao Menu Principal"
+
+[node name="ConfigMenu" parent="." instance=ExtResource("6_kxffs")]
+layer = 2
+visible = false
