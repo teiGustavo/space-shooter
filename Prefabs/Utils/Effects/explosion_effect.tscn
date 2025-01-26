@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://clf5ra3j2rvq7"]
+
+[ext_resource type="Script" path="res://Scripts/Utils/Effects/explosion_effect.gd" id="1_axxmq"]
+
+[sub_resource type="Gradient" id="Gradient_4wvlp"]
+colors = PackedColorArray(0.870588, 1, 0, 1, 1, 0.027451, 0.0470588, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_srf6c"]
+gradient = SubResource("Gradient_4wvlp")
+
+[sub_resource type="Curve" id="Curve_iiypg"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.373626), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_31o5f"]
+curve = SubResource("Curve_iiypg")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_fhsxt"]
+particle_flag_disable_z = true
+spread = 180.0
+initial_velocity_min = 30.0
+initial_velocity_max = 75.0
+gravity = Vector3(0, 98, 0)
+damping_min = 28.0
+damping_max = 28.0
+scale_min = 3.5
+scale_max = 3.5
+scale_curve = SubResource("CurveTexture_31o5f")
+color_ramp = SubResource("GradientTexture1D_srf6c")
+
+[node name="ExplosionEffect" type="GPUParticles2D"]
+emitting = false
+amount = 40
+process_material = SubResource("ParticleProcessMaterial_fhsxt")
+one_shot = true
+explosiveness = 1.0
+script = ExtResource("1_axxmq")

@@ -1,6 +1,7 @@
 class_name Level01
 extends Node2D
 
+
 const ENEMY: Resource = preload("res://Prefabs/Characters/Enemies/enemy.tscn")
 const LIFE_POWERUP = preload("res://Prefabs/PowerUps/life_powerup.tscn")
 const spawn_area_min_x: float = 0
@@ -16,11 +17,12 @@ const spawn_area_min_x: float = 0
 var survival_time: float = 0.0
 
 @onready var hud: CanvasLayer = $HUD
-@onready var player: CharacterBody2D = $Player
+@onready var player: Player = $Player
 @onready var enemy_spawn_timer: Timer = $EnemySpawnTimer
 @onready var life_powerup_spawn_timer: Timer = $LifePowerupSpawnTimer
 @onready var animated_background: Control = $AnimatedBackground
 @onready var spawn_area_max_x: float = get_viewport().size.x
+
 
 func _ready() -> void:
 	PlayerVariables.life_count = PLAYER_INITIAL_LIFE_COUNT
@@ -48,6 +50,8 @@ func _spawn_enemy() -> void:
 	enemy.position = spawn_position
 	enemy.direction = player.position
 	enemy.speed = speed if speed < ENEMY_MAX_SPEED else ENEMY_MAX_SPEED
+	
+	enemy.collided_with_edge.connect(player.take_damage)
 	
 	add_child(enemy)
 	

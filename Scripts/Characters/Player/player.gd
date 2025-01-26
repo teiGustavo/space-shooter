@@ -1,25 +1,29 @@
 class_name Player
 extends CharacterBody2D
 
+
 const LASER: Resource = preload("res://Prefabs/Utils/laser.tscn")
 const SFX_LOSE: Resource = preload("res://Assets/Bonus/sfx_lose.ogg")
 const SFX_SHIELD_UP: Resource = preload("res://Assets/Bonus/sfx_shieldUp.ogg")
 const SCREEN_MARGIN: int = 60
-@onready var point_laser: Marker2D = $CollisionShape2D/PlayerShip2Blue/Marker2D
-@onready var multi_shot_cooldown_timer: Timer = $MultiShotCooldownTimer
-@onready var burst_shot_cooldown_timer: Timer = $BurstShotCooldownTimer
+
 @export var speed: float = 300
 @export var multi_shot_cooldown: float = 0.1
 @export var burst_shot_cooldown: float = 0.11
 @export var shots_per_burst: int = 3
 @export var IMMORTAL: bool = false
-@onready var viewport_size: Vector2 = get_viewport().size
-@onready var flames: Control = $CollisionShape2D/Flames
+
 var shots_fired: int = 0
 var can_shot = true
 var mouse_position: Vector2
 var time_since_last_shot: float 
 var last_collision: KinematicCollision2D
+
+@onready var viewport_size: Vector2 = get_viewport().size
+@onready var flames: Control = $CollisionShape2D/Flames
+@onready var point_laser: Marker2D = $CollisionShape2D/PlayerShip2Blue/Marker2D
+@onready var multi_shot_cooldown_timer: Timer = $MultiShotCooldownTimer
+@onready var burst_shot_cooldown_timer: Timer = $BurstShotCooldownTimer
 
 
 func _ready() -> void:

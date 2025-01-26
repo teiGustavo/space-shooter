@@ -11,6 +11,7 @@ var volumes: Dictionary = {
 	"ambient_sound": 1,
 }
 
+
 func _ready() -> void:
 	set_all_audio_configs()
 	

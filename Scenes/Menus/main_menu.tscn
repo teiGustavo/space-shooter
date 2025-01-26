@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://b03f3jq8g8n2r"]
+[gd_scene load_steps=8 format=3 uid="uid://b03f3jq8g8n2r"]
 
 [ext_resource type="Script" path="res://Scripts/Menus/main_menu.gd" id="1_tas6b"]
 [ext_resource type="PackedScene" uid="uid://cdq6jiymlqywp" path="res://Prefabs/Utils/UI/Buttons/play_button.tscn" id="2_gtwqp"]
 [ext_resource type="PackedScene" uid="uid://cv5lo4kisd7u" path="res://Prefabs/Utils/UI/Buttons/config_button.tscn" id="3_s25dq"]
 [ext_resource type="PackedScene" uid="uid://5w4vvxb071c2" path="res://Prefabs/Utils/UI/Buttons/exit_button.tscn" id="4_6efg2"]
+[ext_resource type="PackedScene" uid="uid://cekjnaxik8xp0" path="res://Scenes/Menus/credits_menu.tscn" id="7_q3p2g"]
 [ext_resource type="PackedScene" uid="uid://b5adnylpguwhk" path="res://Prefabs/Utils/animated_background.tscn" id="8_30v4r"]
 [ext_resource type="PackedScene" uid="uid://cf8bi1o8a4xta" path="res://Scenes/Menus/config_menu.tscn" id="9_ruepf"]
 
@@ -31,6 +32,14 @@ theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 65
 text = "SPACE SHOOTER"
 horizontal_alignment = 1
+
+[node name="CreditsButton" type="Button" parent="CanvasLayer"]
+offset_left = 1032.0
+offset_top = 608.0
+offset_right = 1139.0
+offset_bottom = 634.0
+text = "Créditos"
+flat = true
 
 [node name="Buttons" type="HBoxContainer" parent="CanvasLayer"]
 anchors_preset = 14
@@ -60,4 +69,7 @@ wait_time = 2.0
 autostart = true
 
 [node name="ConfigMenu" parent="." instance=ExtResource("9_ruepf")]
+visible = false
+
+[node name="CreditsMenu" parent="." instance=ExtResource("7_q3p2g")]
 visible = false

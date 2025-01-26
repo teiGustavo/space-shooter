@@ -1,0 +1,58 @@
+[gd_scene load_steps=6 format=3 uid="uid://cekjnaxik8xp0"]
+
+[ext_resource type="Script" path="res://Scripts/Menus/credits_menu.gd" id="1_1ybuv"]
+[ext_resource type="PackedScene" uid="uid://b5adnylpguwhk" path="res://Prefabs/Utils/animated_background.tscn" id="2_nw0n6"]
+[ext_resource type="PackedScene" uid="uid://vpiei14eobpd" path="res://Prefabs/Utils/UI/Buttons/return_button.tscn" id="5_yhjl5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0corh"]
+font_size = 65
+outline_size = 10
+outline_color = Color(0.372549, 0.372549, 0.372549, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_m31l4"]
+font_size = 35
+
+[node name="CreditsMenu" type="CanvasLayer"]
+process_mode = 3
+layer = 2
+script = ExtResource("1_1ybuv")
+
+[node name="AnimatedBackground" parent="." instance=ExtResource("2_nw0n6")]
+
+[node name="Title" type="Label" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 66.0
+offset_bottom = 140.0
+grow_horizontal = 2
+text = "créditos"
+label_settings = SubResource("LabelSettings_0corh")
+horizontal_alignment = 1
+
+[node name="Credits" type="Label" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 227.0
+offset_bottom = 396.0
+grow_horizontal = 2
+text = "Gustavo Teixeira
+Paulo Ceza
+Diogo Vinicius
+Gabriela Moreno"
+label_settings = SubResource("LabelSettings_m31l4")
+horizontal_alignment = 1
+
+[node name="Buttons" type="HBoxContainer" parent="."]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = 140.0
+offset_bottom = 291.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 100
+alignment = 1
+
+[node name="ReturnButton" parent="Buttons" instance=ExtResource("5_yhjl5")]
+layout_mode = 2
