@@ -5,7 +5,6 @@ extends Node2D
 const ENEMY: Resource = preload("res://Prefabs/Characters/Enemies/enemy.tscn")
 const spawn_area_min_x: float = 0
 
-@export var PLAYER_INITIAL_LIFE_COUNT: int = 3
 @export var ENEMY_INITIAL_SPEED: float = 4
 @export var ENEMY_MAX_SPEED: float = 15
 @export var ENEMY_SPEED_INCREASE: float = 0.2
