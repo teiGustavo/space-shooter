@@ -3,9 +3,11 @@ extends Area2D
 
 
 const SFX_LASER_1: Resource = preload("res://Assets/Bonus/sfx_laser1.ogg")
+
+@export var speed: float = 45
+
 var direction: Vector2
 var need: Vector2
-@export var speed: float = 45
 
 
 func _ready() -> void:
@@ -23,5 +25,6 @@ func _physics_process(_delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("enemies"):
 		queue_free()
+		body.destroyed_by_player.emit()
 		body.queue_free()
 		PlayerVariables.increase_score()

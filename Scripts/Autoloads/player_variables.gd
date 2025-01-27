@@ -3,9 +3,11 @@ extends Node
 
 const MIN_LIFE_COUNT: int = 0
 const MAX_LIFE_COUNT: int = 5
+const INITIAL_LIFE_COUNT: int = 3
 const MAX_SCORE: int = 99999
 const SCORE_INCREMENT: int = 100
 const SCORE_DECREMENT: int = 300
+
 var life_count: int = 3
 var score: int = 0
 
@@ -32,3 +34,7 @@ func decrease_score(count: int = SCORE_DECREMENT) -> void:
 		score -= count
 	else:
 		score = 0
+		
+func reset() -> void:
+	life_count = INITIAL_LIFE_COUNT
+	score = 0

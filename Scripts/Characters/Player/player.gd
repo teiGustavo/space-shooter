@@ -85,7 +85,7 @@ func detect_shot() -> void:
 		shoot()
 
 func shoot() -> void:
-	var laser: Node = LASER.instantiate()
+	var laser: Laser = LASER.instantiate()
 
 	laser.position = point_laser.global_position
 	laser.direction = mouse_position

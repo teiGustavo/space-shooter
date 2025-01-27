@@ -4,6 +4,7 @@ extends Node2D
 
 const LEVEL_01: Resource = preload("res://Scenes/level_01.tscn")
 const CURSOR: Resource = preload("res://Assets/PNG/UI/cursor.png")
+
 @onready var enemy_spawn_timer: Timer = $EnemySpawnTimer
 @onready var play_button: TextureButton = $CanvasLayer/Buttons/PlayButton/TextureButton
 @onready var config_button: TextureButton = $CanvasLayer/Buttons/ConfigButton/TextureButton

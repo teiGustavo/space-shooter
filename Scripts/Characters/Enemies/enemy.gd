@@ -3,7 +3,9 @@ extends CharacterBody2D
 
 
 signal collided_with_edge
+signal destroyed_by_player
 
+const LIFE_POWERUP: Resource = preload("res://Prefabs/PowerUps/life_powerup.tscn")
 const EXPLOSION_EFFECT: Resource = preload("res://Prefabs/Utils/Effects/explosion_effect.tscn")
 const DEFAULT_SPEED: float = 4
 
@@ -19,6 +21,7 @@ func _ready() -> void:
 	need = position.direction_to(direction)
 	
 	tree_exiting.connect(_on_tree_exiting)
+	destroyed_by_player.connect(_on_destroyed_by_player)
 
 func _physics_process(_delta: float) -> void:
 	position += need * speed
@@ -38,3 +41,17 @@ func destroy() -> void:
 
 func _on_tree_exiting() -> void:
 	destroy()
+
+func _on_destroyed_by_player() -> void:
+	# Porcentagem teórica de 10% de spawnar um power-up
+	if randi_range(1, 10) == 3:
+		_spawn_powerup()
+
+func _spawn_powerup():
+	var powerup: Node = LIFE_POWERUP.instantiate()
+	var spawn_position: Vector2 = global_position
+	
+	powerup.position = spawn_position
+	powerup.direction = Vector2.DOWN
+	
+	get_parent().add_child.call_deferred(powerup)

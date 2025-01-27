@@ -19,9 +19,6 @@ rotation = 4.71239
 wait_time = 2.0
 autostart = true
 
-[node name="LifePowerupSpawnTimer" type="Timer" parent="."]
-wait_time = 15.0
-
 [node name="HUD" parent="." instance=ExtResource("4_xyj64")]
 
 [node name="PauseMenu" parent="." instance=ExtResource("5_nopwj")]
