@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://bb3oln3b5vmlh"]
+
+[ext_resource type="PackedScene" uid="uid://kti10ulwg05e" path="res://Prefabs/Characters/Enemies/base_enemy.tscn" id="1_o6n4j"]
+[ext_resource type="Texture2D" uid="uid://638c7tpyh7l1" path="res://Assets/PNG/Enemies/enemyGreen3.png" id="2_xl4qu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cey3g"]
+radius = 48.72
+
+[node name="Enemy3" instance=ExtResource("1_o6n4j")]
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource("CircleShape2D_cey3g")
+
+[node name="Sprite2D" parent="CollisionShape2D" index="0"]
+texture = ExtResource("2_xl4qu")

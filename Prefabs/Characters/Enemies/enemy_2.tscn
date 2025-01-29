@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://brsi3q6umxkvx"]
+
+[ext_resource type="PackedScene" uid="uid://kti10ulwg05e" path="res://Prefabs/Characters/Enemies/base_enemy.tscn" id="1_skr3f"]
+[ext_resource type="Texture2D" uid="uid://c45mw3jreitdl" path="res://Assets/PNG/Enemies/enemyRed2.png" id="2_4wg5q"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x1ljq"]
+radius = 41.0
+height = 105.0
+
+[node name="Enemy2" instance=ExtResource("1_skr3f")]
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource("CapsuleShape2D_x1ljq")
+
+[node name="Sprite2D" parent="CollisionShape2D" index="0"]
+texture = ExtResource("2_4wg5q")

@@ -1,7 +1,6 @@
 extends Node
 
 
-const ENEMY: Resource = preload("res://Prefabs/Characters/Enemies/enemy.tscn")
 const spawn_area_min_x: float = 0
 @onready var spawn_area_max_x: float = get_viewport().size.x
 
@@ -42,17 +41,6 @@ func get_numerals() -> Array[Resource]:
 		images.append(get_numeral(i))
 		
 	return images
-
-func spawn_enemy(direction: Vector2, root: Node, speed: float = 4) -> void:
-	var enemy: Node = ENEMY.instantiate()
-	var random_x: float = randf_range(spawn_area_min_x, spawn_area_max_x) 
-	var spawn_position: Vector2 = Vector2(random_x, 0)
-	
-	enemy.position = spawn_position
-	enemy.direction = direction
-	enemy.speed = speed
-	
-	root.add_child(enemy)
 
 func destroy(obj) -> void:
 	if not get_viewport().get_visible_rect().has_point(obj.position):

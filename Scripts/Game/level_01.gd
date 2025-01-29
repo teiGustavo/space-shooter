@@ -2,7 +2,7 @@ class_name Level01
 extends Node2D
 
 
-const ENEMY: Resource = preload("res://Prefabs/Characters/Enemies/enemy.tscn")
+const ENEMY: Resource = preload("res://Prefabs/Characters/Enemies/enemy_1.tscn")
 const spawn_area_min_x: float = 0
 
 @export var ENEMY_INITIAL_SPEED: float = 4
