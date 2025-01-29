@@ -11,7 +11,7 @@ var need: Vector2
 
 
 func _ready() -> void:
-	add_to_group("life_powerup")
+	add_to_group("powerup")
 	need = direction
 
 func _physics_process(_delta: float) -> void:
