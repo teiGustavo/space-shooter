@@ -2,6 +2,8 @@ class_name PauseMenu
 extends BasePopupMenu
 
 
+const SONIC_BOOM: AudioStreamMP3 = preload("res://Assets/Sounds/sonic-boom.mp3")
+
 @onready var play_button: BaseUIButton = $Buttons/PlayButton
 @onready var config_button: BaseUIButton = $Buttons/ConfigButton
 @onready var exit_button: BaseUIButton = $Buttons/ExitButton
@@ -28,4 +30,5 @@ func _on_config_button_pressed() -> void:
 
 func _on_exit_button_pressed() -> void:
 	hide_menu()
+	SoundManager.play_sound(SONIC_BOOM)
 	get_tree().change_scene_to_file("res://Scenes/Menus/main_menu.tscn")
