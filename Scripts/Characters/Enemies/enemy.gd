@@ -20,7 +20,6 @@ func _ready() -> void:
 	look_at(direction)
 	need = position.direction_to(direction)
 	
-	tree_exiting.connect(_on_tree_exiting)
 	destroyed_by_player.connect(_on_destroyed_by_player)
 
 func _physics_process(_delta: float) -> void:
@@ -38,9 +37,6 @@ func destroy() -> void:
 	get_parent().add_child.call_deferred(explosion)
 	
 	queue_free()
-
-func _on_tree_exiting() -> void:
-	destroy()
 
 func _on_destroyed_by_player() -> void:
 	# Porcentagem teórica de 10% de spawnar um power-up

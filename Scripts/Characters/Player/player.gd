@@ -113,9 +113,9 @@ func detect_slide_collision() -> void:
 		var collider = last_collision.get_collider()
 		
 		if collider.is_in_group("enemies"):
-			collider.queue_free()
+			collider.destroy()
 			take_damage()
 			
-		if collider.is_in_group("life_powerup"):
+		if collider.is_in_group("powerup"):
 			collider.queue_free()
 			increase_life()

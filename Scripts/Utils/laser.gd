@@ -26,5 +26,5 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("enemies"):
 		queue_free()
 		body.destroyed_by_player.emit()
-		body.queue_free()
+		body.destroy()
 		PlayerVariables.increase_score()
