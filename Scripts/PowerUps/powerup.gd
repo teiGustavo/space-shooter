@@ -1,11 +1,14 @@
-class_name LifePowerUp
+class_name PowerUp
 extends CharacterBody2D
 
 
 const DEFAULT_SPEED: float = 1
+
+@export var speed: float = DEFAULT_SPEED
+
 var direction: Vector2
 var need: Vector2
-@export var speed: float = DEFAULT_SPEED
+
 
 func _ready() -> void:
 	add_to_group("life_powerup")
