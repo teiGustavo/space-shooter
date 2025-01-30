@@ -1,14 +1,17 @@
 class_name AnimatedBackground
 extends Control
 
-
+@export var texture: Texture2D
 @export var speed: float = 200
+
 @onready var background_1: TextureRect = $Background1 
 @onready var background_2: TextureRect = $Background2
 @onready var viewport_size: Vector2i = get_viewport().size
 
 
 func _ready() -> void:
+	background_1.texture = texture
+	background_2.texture = texture
 	background_1.size = viewport_size
 	background_2.size = viewport_size
 	background_1.position = Vector2(0, 0)

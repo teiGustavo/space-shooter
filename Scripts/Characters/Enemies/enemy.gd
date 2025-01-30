@@ -26,7 +26,7 @@ func _physics_process(_delta: float) -> void:
 	position += need * speed
 	
 	# Inimigo é eliminado caso passe do limite da tela
-	if not get_viewport().get_visible_rect().has_point(position):
+	if not get_viewport().get_visible_rect().has_point(position) and position.y > 0:
 		queue_free()
 		collided_with_edge.emit()
 

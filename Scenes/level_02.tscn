@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://bj5rdiyxps3ha"]
+
+[ext_resource type="PackedScene" uid="uid://yteoqqp3ok74" path="res://Scenes/base_level.tscn" id="1_7icj4"]
+[ext_resource type="Resource" uid="uid://bo01rnh1sl67g" path="res://Data/Levels/Descriptions/level_02.tres" id="2_2udgp"]
+[ext_resource type="PackedScene" uid="uid://c7208sj0i1tb5" path="res://Scenes/level_03.tscn" id="2_ii147"]
+
+[node name="Level02" instance=ExtResource("1_7icj4")]
+next_scene = ExtResource("2_ii147")
+level_description = ExtResource("2_2udgp")
+ENEMY_INITIAL_SPEED = 5.0
+
+[node name="EnemySpawnTimer" parent="." index="2"]
+wait_time = 0.6
+
+[node name="CongratulationsLabel" parent="." index="5"]
+text = "Meus parabéns, Você superou à segunda horda de inimigos"

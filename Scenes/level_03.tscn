@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://c7208sj0i1tb5"]
+
+[ext_resource type="PackedScene" uid="uid://yteoqqp3ok74" path="res://Scenes/base_level.tscn" id="1_knx1y"]
+[ext_resource type="PackedScene" uid="uid://cr0ersdchptyk" path="res://Scenes/level_04.tscn" id="2_gt732"]
+[ext_resource type="Resource" uid="uid://bj3s7ogqo2cur" path="res://Data/Levels/Descriptions/level_03.tres" id="2_rnuph"]
+[ext_resource type="Texture2D" uid="uid://bqih7dbchtoxn" path="res://Assets/Backgrounds/blue.png" id="4_0kbft"]
+
+[node name="Level03" instance=ExtResource("1_knx1y")]
+next_scene = ExtResource("2_gt732")
+level_description = ExtResource("2_rnuph")
+ENEMY_INITIAL_SPEED = 5.0
+ENEMY_MAX_SPEED = 9.0
+ENEMY_SPEED_INCREASE = 0.4
+
+[node name="AnimatedBackground" parent="." index="0"]
+texture = ExtResource("4_0kbft")
+
+[node name="EnemySpawnTimer" parent="." index="2"]
+wait_time = 0.6
