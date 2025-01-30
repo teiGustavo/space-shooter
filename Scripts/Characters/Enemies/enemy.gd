@@ -39,6 +39,9 @@ func destroy() -> void:
 	queue_free()
 
 func _on_destroyed_by_player() -> void:
+	if PlayerVariables.life_count == PlayerVariables.MAX_LIFE_COUNT:
+		return
+	
 	# Porcentagem teórica de 10% de spawnar um power-up
 	if randi_range(1, 10) == 3:
 		_spawn_powerup()
