@@ -5,6 +5,10 @@ extends Node2D
 const LEVEL_01: Resource = preload("res://Scenes/level_01.tscn")
 const CURSOR: Resource = preload("res://Assets/PNG/UI/cursor.png")
 
+@export var level_description: LevelDescription
+
+var enemy_variations: Array[PackedScene]
+
 @onready var enemy_spawn_timer: Timer = $EnemySpawnTimer
 @onready var play_button: TextureButton = $CanvasLayer/Buttons/PlayButton/TextureButton
 @onready var config_button: TextureButton = $CanvasLayer/Buttons/ConfigButton/TextureButton
@@ -21,6 +25,8 @@ func _ready() -> void:
 	exit_button.pressed.connect(_on_quit_button_pressed)
 	credits_button.pressed.connect(_on_credits_button_pressed)
 	enemy_spawn_timer.connect("timeout", _spawn_enemy)
+	
+	enemy_variations = level_description.enemy_variations
 
 func _on_start_button_pressed() -> void:
 	get_tree().change_scene_to_packed(LEVEL_01)
@@ -35,4 +41,8 @@ func _on_credits_button_pressed() -> void:
 	credits_menu.show()
 	
 func _spawn_enemy():
-	GlobalFunctions.spawn_enemy(get_viewport().get_mouse_position(), self)
+	GlobalFunctions.spawn_enemy(
+		enemy_variations, 
+		get_viewport().get_mouse_position(), 
+		self
+	)

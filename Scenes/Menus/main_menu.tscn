@@ -1,16 +1,29 @@
-[gd_scene load_steps=8 format=3 uid="uid://b03f3jq8g8n2r"]
+[gd_scene load_steps=15 format=3 uid="uid://b03f3jq8g8n2r"]
 
 [ext_resource type="Script" path="res://Scripts/Menus/main_menu.gd" id="1_tas6b"]
 [ext_resource type="PackedScene" uid="uid://cdq6jiymlqywp" path="res://Prefabs/Utils/UI/Buttons/play_button.tscn" id="2_gtwqp"]
+[ext_resource type="PackedScene" uid="uid://c4c1xpr0mytde" path="res://Prefabs/Characters/Enemies/enemy_1.tscn" id="2_whfaq"]
+[ext_resource type="PackedScene" uid="uid://brsi3q6umxkvx" path="res://Prefabs/Characters/Enemies/enemy_2.tscn" id="3_ghox6"]
 [ext_resource type="PackedScene" uid="uid://cv5lo4kisd7u" path="res://Prefabs/Utils/UI/Buttons/config_button.tscn" id="3_s25dq"]
 [ext_resource type="PackedScene" uid="uid://5w4vvxb071c2" path="res://Prefabs/Utils/UI/Buttons/exit_button.tscn" id="4_6efg2"]
+[ext_resource type="PackedScene" uid="uid://bb3oln3b5vmlh" path="res://Prefabs/Characters/Enemies/enemy_3.tscn" id="4_f1h2i"]
+[ext_resource type="PackedScene" uid="uid://db7ka87ecrmqv" path="res://Prefabs/Characters/Enemies/enemy_4.tscn" id="5_gevam"]
+[ext_resource type="PackedScene" uid="uid://d1gce2dt053ks" path="res://Prefabs/Characters/Enemies/enemy_5.tscn" id="6_a4gw4"]
+[ext_resource type="Script" path="res://Scripts/Models/level_description.gd" id="7_e1wlx"]
 [ext_resource type="PackedScene" uid="uid://cekjnaxik8xp0" path="res://Scenes/Menus/credits_menu.tscn" id="7_q3p2g"]
 [ext_resource type="PackedScene" uid="uid://b5adnylpguwhk" path="res://Prefabs/Utils/animated_background.tscn" id="8_30v4r"]
 [ext_resource type="PackedScene" uid="uid://cf8bi1o8a4xta" path="res://Scenes/Menus/config_menu.tscn" id="9_ruepf"]
 
+[sub_resource type="Resource" id="Resource_2qftf"]
+script = ExtResource("7_e1wlx")
+name = "MainMenu"
+enemy_variations = Array[PackedScene]([ExtResource("2_whfaq"), ExtResource("3_ghox6"), ExtResource("4_f1h2i"), ExtResource("5_gevam"), ExtResource("6_a4gw4")])
+survival_time_in_seconds = 0.0
+
 [node name="MainMenu" type="Node2D"]
 process_mode = 3
 script = ExtResource("1_tas6b")
+level_description = SubResource("Resource_2qftf")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

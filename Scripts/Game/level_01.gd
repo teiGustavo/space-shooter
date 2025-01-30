@@ -2,9 +2,11 @@ class_name Level01
 extends Node2D
 
 
-const ENEMY: Resource = preload("res://Prefabs/Characters/Enemies/enemy_1.tscn")
 const spawn_area_min_x: float = 0
 
+@export var all_level_descriptions: ResourceGroup = load(
+	"res://Data/Levels/level_descriptions.tres"
+)
 @export var ENEMY_INITIAL_SPEED: float = 4
 @export var ENEMY_MAX_SPEED: float = 15
 @export var ENEMY_SPEED_INCREASE: float = 0.2
@@ -13,6 +15,8 @@ const spawn_area_min_x: float = 0
 @export var BACKGROUND_SPEED_INCREASE: float = 4
 
 var survival_time: float = 0.0
+var level_descriptions: Array[LevelDescription]
+@export var level_description: LevelDescription
 
 @onready var hud: CanvasLayer = $HUD
 @onready var player: Player = $Player
@@ -22,6 +26,16 @@ var survival_time: float = 0.0
 
 
 func _ready() -> void:
+	if not all_level_descriptions:
+		push_error("Please enter the level descriptions ResourceGroup manually!")
+	else:
+		level_descriptions = Array(
+			all_level_descriptions.load_all(),
+			TYPE_OBJECT,
+			"Resource",
+			LevelDescription
+		)
+	
 	PlayerVariables.reset()
 	enemy_spawn_timer.timeout.connect(_spawn_enemy)
 	
@@ -32,7 +46,7 @@ func _physics_process(delta: float) -> void:
 	increase_background_speed()
 
 func _spawn_enemy() -> void:
-	var enemy: Node = ENEMY.instantiate()
+	var enemy: Enemy = level_description.enemy_variations.pick_random().instantiate()
 	var random_x: float = randf_range(spawn_area_min_x, spawn_area_max_x) 
 	var spawn_position: Vector2 = Vector2(random_x, 0)
 	var speed = ENEMY_INITIAL_SPEED + (survival_time * ENEMY_SPEED_INCREASE)

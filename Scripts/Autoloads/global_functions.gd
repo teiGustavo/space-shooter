@@ -1,10 +1,6 @@
 extends Node
 
 
-const spawn_area_min_x: float = 0
-@onready var spawn_area_max_x: float = get_viewport().size.x
-
-
 func get_numeral(number: int) -> Resource:
 	var numeral: Resource
 		
@@ -42,6 +38,23 @@ func get_numerals() -> Array[Resource]:
 		
 	return images
 
-func destroy(obj) -> void:
-	if not get_viewport().get_visible_rect().has_point(obj.position):
-		obj.queue_free()
+# Função utilitária para UI's
+func spawn_enemy(
+	enemy_variations: Array[PackedScene], 
+	direction: Vector2, 
+	root: Node, 
+	speed: float = 4
+) -> void:
+	if not enemy_variations:
+		push_warning('Enemy variations is empty.')
+		return
+	
+	var enemy: Enemy = enemy_variations.pick_random().instantiate()
+	var random_x: float = randf_range(0, get_viewport().size.x) 
+	var spawn_position: Vector2 = Vector2(random_x, 0)
+	
+	enemy.position = spawn_position
+	enemy.direction = direction
+	enemy.speed = speed
+	
+	root.add_child(enemy)
