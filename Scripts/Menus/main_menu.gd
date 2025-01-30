@@ -27,6 +27,7 @@ func _ready() -> void:
 	enemy_variations = level_description.enemy_variations
 
 func _on_start_button_pressed() -> void:
+	PlayerVariables.reset()
 	TransitionManager.fade_to_scene("res://Scenes/level_01.tscn")
 	
 func _on_quit_button_pressed() -> void:

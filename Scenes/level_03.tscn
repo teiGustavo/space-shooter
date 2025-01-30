@@ -9,7 +9,7 @@
 next_scene = ExtResource("2_gt732")
 level_description = ExtResource("2_rnuph")
 ENEMY_INITIAL_SPEED = 5.0
-ENEMY_MAX_SPEED = 9.0
+ENEMY_MAX_SPEED = 8.0
 ENEMY_SPEED_INCREASE = 0.4
 
 [node name="AnimatedBackground" parent="." index="0"]
@@ -17,3 +17,6 @@ texture = ExtResource("4_0kbft")
 
 [node name="EnemySpawnTimer" parent="." index="2"]
 wait_time = 0.6
+
+[node name="CongratulationsLabel" parent="." index="5"]
+text = "Meus parabéns, Você superou à taerceira horda de inimigos"

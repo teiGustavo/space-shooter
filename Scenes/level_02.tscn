@@ -7,10 +7,10 @@
 [node name="Level02" instance=ExtResource("1_7icj4")]
 next_scene = ExtResource("2_ii147")
 level_description = ExtResource("2_2udgp")
-ENEMY_INITIAL_SPEED = 5.0
+ENEMY_MAX_SPEED = 7.0
 
 [node name="EnemySpawnTimer" parent="." index="2"]
-wait_time = 0.6
+wait_time = 0.5
 
 [node name="CongratulationsLabel" parent="." index="5"]
 text = "Meus parabéns, Você superou à segunda horda de inimigos"

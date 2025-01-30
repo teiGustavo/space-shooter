@@ -10,6 +10,7 @@ const SCORE_DECREMENT: int = 300
 
 var life_count: int = 3
 var score: int = 0
+var total_alive_time: float = 0
 
 
 func has_lives_left() -> bool:
@@ -38,3 +39,4 @@ func decrease_score(count: int = SCORE_DECREMENT) -> void:
 func reset() -> void:
 	life_count = INITIAL_LIFE_COUNT
 	score = 0
+	total_alive_time = 0

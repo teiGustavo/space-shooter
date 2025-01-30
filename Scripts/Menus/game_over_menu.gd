@@ -14,6 +14,7 @@ func _ready() -> void:
 	return_button.pressed.connect(_on_return_button_pressed)
 
 func _on_play_button_pressed() -> void:
+	PlayerVariables.reset()
 	get_tree().change_scene_to_file("res://Scenes/level_01.tscn")
 	
 func _on_config_button_pressed() -> void:

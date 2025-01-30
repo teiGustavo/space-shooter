@@ -27,13 +27,14 @@ var enemies_alive: int = 0
 
 func _ready() -> void:	
 	enemies_left = level_description.horde_size
-	
-	PlayerVariables.reset()
+
 	enemy_spawn_timer.timeout.connect(_on_enemy_spawn_timer_timeout)
 	
 func _physics_process(delta: float) -> void:
 	survival_time += delta
-	hud.elapsed_time = survival_time
+	PlayerVariables.total_alive_time += delta
+	
+	hud.elapsed_time = PlayerVariables.total_alive_time
 	hud.enemies_left = enemies_left
 	
 	enemies_alive = get_tree().get_nodes_in_group('enemies').size()
