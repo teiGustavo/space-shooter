@@ -9,15 +9,15 @@
 next_scene = ExtResource("2_uqtvl")
 level_description = ExtResource("3_3m7g6")
 ENEMY_INITIAL_SPEED = 5.0
-ENEMY_MAX_SPEED = 7.0
-ENEMY_SPEED_INCREASE = 0.4
+ENEMY_MAX_SPEED = 10.0
+ENEMY_SPEED_INCREASE = 0.5
 BACKGROUND_INITIAL_SPEED = 300.0
 
 [node name="AnimatedBackground" parent="." index="0"]
 texture = ExtResource("2_fo455")
 
 [node name="EnemySpawnTimer" parent="." index="2"]
-wait_time = 0.25
+wait_time = 0.23
 
 [node name="CongratulationsLabel" parent="." index="5"]
 text = "Obrigado por jogar!"

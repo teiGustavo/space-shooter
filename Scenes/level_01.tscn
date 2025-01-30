@@ -10,6 +10,9 @@
 script = ExtResource("1_il3we")
 next_scene = ExtResource("3_x5qhn")
 level_description = ExtResource("2_el84l")
+ENEMY_INITIAL_SPEED = 3.0
+ENEMY_MAX_SPEED = 3.0
+BACKGROUND_MAX_SPEED = 250.0
 
 [node name="AnimatedBackground" parent="." index="0"]
 texture = ExtResource("4_vpfhu")
@@ -18,13 +21,16 @@ texture = ExtResource("4_vpfhu")
 wait_time = 2.0
 autostart = false
 
+[node name="PauseMenu" parent="." index="4"]
+layer = 2
+
 [node name="CongratulationsLabel" parent="." index="5"]
 text = "Meus parabéns, Você superou à primeira horda de inimigos"
 
-[node name="TutorialMenu" type="CanvasLayer" parent="." index="6"]
+[node name="TutorialMenu1" type="CanvasLayer" parent="." index="6"]
 process_mode = 3
 
-[node name="Label" type="Label" parent="TutorialMenu" index="0"]
+[node name="Label" type="Label" parent="TutorialMenu1" index="0"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -39,7 +45,7 @@ grow_vertical = 2
 text = "Movimentação: WSAD ou Setinhas"
 horizontal_alignment = 1
 
-[node name="Label2" type="Label" parent="TutorialMenu" index="1"]
+[node name="Label2" type="Label" parent="TutorialMenu1" index="1"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -57,7 +63,7 @@ F: Tiro modo rajada
 G: Tiro único"
 horizontal_alignment = 1
 
-[node name="Label3" type="Label" parent="TutorialMenu" index="2"]
+[node name="Label3" type="Label" parent="TutorialMenu1" index="2"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -71,3 +77,59 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Pressione ESC para pausar o jogo"
 horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="TutorialMenu1" index="3"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -208.0
+offset_top = -308.0
+offset_right = 234.0
+offset_bottom = -227.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "OS INIMIGOS VIRÃO PRIMORDIALMENTE DAQUI, FIQUE ATENTO"
+horizontal_alignment = 1
+
+[node name="TutorialMenu2" type="CanvasLayer" parent="." index="7"]
+process_mode = 3
+visible = false
+
+[node name="Label" type="Label" parent="TutorialMenu2" index="0"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -552.0
+offset_top = -260.0
+offset_right = -47.0
+offset_bottom = -242.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Descreve quanto de vida o personagem possui"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="TutorialMenu2" index="1"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 48.0
+offset_top = -236.0
+offset_right = 553.0
+offset_bottom = -218.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Mostra o score e tempo total decorrido"
+horizontal_alignment = 2
+
+[node name="Label3" type="Label" parent="TutorialMenu2" index="2"]
+offset_left = 24.0
+offset_top = 576.0
+offset_right = 597.0
+offset_bottom = 664.0
+text = "Quantidade de inimigos da horda"

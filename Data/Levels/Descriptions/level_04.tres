@@ -9,4 +9,4 @@
 script = ExtResource("4_kf65b")
 name = "Level04"
 enemy_variations = Array[PackedScene]([ExtResource("1_8me6w"), ExtResource("2_imjxr"), ExtResource("3_7falk")])
-horde_size = 200
+horde_size = 400

@@ -52,5 +52,5 @@ layout_mode = 2
 custom_label = "Desistir"
 
 [node name="ConfigMenu" parent="." instance=ExtResource("6_jieit")]
-layer = 2
+layer = 3
 visible = false

@@ -7,7 +7,7 @@
 [node name="Level02" instance=ExtResource("1_7icj4")]
 next_scene = ExtResource("2_ii147")
 level_description = ExtResource("2_2udgp")
-ENEMY_MAX_SPEED = 7.0
+ENEMY_MAX_SPEED = 5.0
 
 [node name="EnemySpawnTimer" parent="." index="2"]
 wait_time = 0.5

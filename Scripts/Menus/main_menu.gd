@@ -28,7 +28,7 @@ func _ready() -> void:
 
 func _on_start_button_pressed() -> void:
 	PlayerVariables.reset()
-	TransitionManager.fade_to_scene("res://Scenes/level_01.tscn")
+	TransitionManager.fade_to_scene("res://Scenes/level_04.tscn")
 	
 func _on_quit_button_pressed() -> void:
 	get_tree().quit()
