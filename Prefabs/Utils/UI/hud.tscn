@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cd7bx6wwi4e5r"]
+[gd_scene load_steps=7 format=3 uid="uid://cd7bx6wwi4e5r"]
 
 [ext_resource type="Script" path="res://Scripts/Utils/UI/hud.gd" id="1_8igy1"]
 [ext_resource type="Texture2D" uid="uid://dvd1ft7u74to4" path="res://Assets/PNG/UI/playerLife2_blue.png" id="2_bxn3j"]
 [ext_resource type="Texture2D" uid="uid://y0a0jghoaax8" path="res://Assets/PNG/UI/numeralX.png" id="3_khvu3"]
 [ext_resource type="Texture2D" uid="uid://ck6h1xkdnwjlc" path="res://Assets/PNG/UI/numeral3.png" id="4_nlajh"]
 [ext_resource type="Texture2D" uid="uid://dkunj8vs7wem1" path="res://Assets/PNG/UI/numeral0.png" id="5_v6gt2"]
+[ext_resource type="Texture2D" uid="uid://dogcffpsxg1s2" path="res://Assets/PNG/Enemies/enemyRed1.png" id="6_y086j"]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_8igy1")
@@ -12,10 +13,10 @@ script = ExtResource("1_8igy1")
 [node name="Life" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 34.0
-offset_top = 36.0
-offset_right = 122.0
-offset_bottom = 64.0
+offset_left = 25.0
+offset_top = 23.0
+offset_right = 113.0
+offset_bottom = 51.0
 
 [node name="LifeIcon" type="TextureRect" parent="Life"]
 layout_mode = 0
@@ -35,10 +36,10 @@ texture = ExtResource("4_nlajh")
 [node name="Score" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 1007.0
-offset_top = 32.0
-offset_right = 1007.0
-offset_bottom = 32.0
+offset_left = 1016.0
+offset_top = 19.0
+offset_right = 1016.0
+offset_bottom = 19.0
 
 [node name="Digits" type="HBoxContainer" parent="Score"]
 layout_mode = 0
@@ -71,6 +72,7 @@ texture = ExtResource("5_v6gt2")
 stretch_mode = 2
 
 [node name="FPS" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = 1088.0
@@ -104,10 +106,10 @@ vertical_alignment = 2
 [node name="ElapsedTime" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 1009.0
-offset_top = 65.0
-offset_right = 1049.0
-offset_bottom = 81.0
+offset_left = 1018.0
+offset_top = 52.0
+offset_right = 1058.0
+offset_bottom = 68.0
 
 [node name="Digits" type="HBoxContainer" parent="ElapsedTime"]
 layout_mode = 0
@@ -140,6 +142,44 @@ texture = ExtResource("5_v6gt2")
 stretch_mode = 2
 
 [node name="Digit4" type="TextureRect" parent="ElapsedTime/Digits"]
+layout_mode = 2
+texture = ExtResource("5_v6gt2")
+stretch_mode = 2
+
+[node name="EnemiesLeft" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 17.0
+offset_top = 608.0
+offset_right = 105.0
+offset_bottom = 636.0
+
+[node name="LifeIcon" type="TextureRect" parent="EnemiesLeft"]
+layout_mode = 0
+offset_left = 7.0
+offset_right = 100.0
+offset_bottom = 84.0
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("6_y086j")
+stretch_mode = 2
+
+[node name="Digits" type="HBoxContainer" parent="EnemiesLeft"]
+offset_left = 40.0
+offset_top = 3.0
+offset_right = 142.0
+offset_bottom = 22.0
+
+[node name="Digit1" type="TextureRect" parent="EnemiesLeft/Digits"]
+layout_mode = 2
+texture = ExtResource("5_v6gt2")
+stretch_mode = 2
+
+[node name="Digit2" type="TextureRect" parent="EnemiesLeft/Digits"]
+layout_mode = 2
+texture = ExtResource("5_v6gt2")
+stretch_mode = 2
+
+[node name="Digit3" type="TextureRect" parent="EnemiesLeft/Digits"]
 layout_mode = 2
 texture = ExtResource("5_v6gt2")
 stretch_mode = 2

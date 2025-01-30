@@ -7,6 +7,7 @@ const spawn_area_min_x: float = 0
 @export var all_level_descriptions: ResourceGroup = load(
 	"res://Data/Levels/level_descriptions.tres"
 )
+@export var level_description: LevelDescription
 @export var ENEMY_INITIAL_SPEED: float = 4
 @export var ENEMY_MAX_SPEED: float = 15
 @export var ENEMY_SPEED_INCREASE: float = 0.2
@@ -16,12 +17,12 @@ const spawn_area_min_x: float = 0
 
 var survival_time: float = 0.0
 var level_descriptions: Array[LevelDescription]
-@export var level_description: LevelDescription
+var enemies_left: int
 
-@onready var hud: CanvasLayer = $HUD
+@onready var hud: HUD = $HUD
 @onready var player: Player = $Player
 @onready var enemy_spawn_timer: Timer = $EnemySpawnTimer
-@onready var animated_background: Control = $AnimatedBackground
+@onready var animated_background: AnimatedBackground = $AnimatedBackground
 @onready var spawn_area_max_x: float = get_viewport().size.x
 
 
@@ -35,15 +36,24 @@ func _ready() -> void:
 			"Resource",
 			LevelDescription
 		)
+		
+	enemies_left = level_description.horde_size
 	
 	PlayerVariables.reset()
-	enemy_spawn_timer.timeout.connect(_spawn_enemy)
+	enemy_spawn_timer.timeout.connect(_on_enemy_spawn_timer_timeout)
 	
 func _physics_process(delta: float) -> void:
 	survival_time += delta
 	hud.elapsed_time = survival_time
+	hud.enemies_left = enemies_left
 	
 	increase_background_speed()
+
+func _on_enemy_spawn_timer_timeout() -> void:
+	if enemies_left > 0:
+		_spawn_enemy()
+		enemies_left -= 1
+		
 
 func _spawn_enemy() -> void:
 	var enemy: Enemy = level_description.enemy_variations.pick_random().instantiate()

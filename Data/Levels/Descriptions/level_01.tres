@@ -7,4 +7,4 @@
 script = ExtResource("1_udf3m")
 name = "Level01"
 enemy_variations = Array[PackedScene]([ExtResource("1_473di")])
-survival_time_in_seconds = 20.0
+horde_size = 20

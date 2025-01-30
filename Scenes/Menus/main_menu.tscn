@@ -18,7 +18,7 @@
 script = ExtResource("7_e1wlx")
 name = "MainMenu"
 enemy_variations = Array[PackedScene]([ExtResource("2_whfaq"), ExtResource("3_ghox6"), ExtResource("4_f1h2i"), ExtResource("5_gevam"), ExtResource("6_a4gw4")])
-survival_time_in_seconds = 0.0
+horde_size = 0
 
 [node name="MainMenu" type="Node2D"]
 process_mode = 3

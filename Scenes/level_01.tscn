@@ -18,7 +18,7 @@ position = Vector2(592, 576)
 rotation = 4.71239
 
 [node name="EnemySpawnTimer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 1.5
 autostart = true
 
 [node name="HUD" parent="." instance=ExtResource("4_xyj64")]
