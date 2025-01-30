@@ -1,11 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://bpwo16xid15g5"]
+[gd_scene load_steps=6 format=3 uid="uid://bpwo16xid15g5"]
 
 [ext_resource type="PackedScene" uid="uid://yteoqqp3ok74" path="res://Scenes/base_level.tscn" id="1_0bies"]
+[ext_resource type="Script" path="res://Scripts/Game/level_01.gd" id="1_il3we"]
 [ext_resource type="Resource" uid="uid://dpey0etjfk3wi" path="res://Data/Levels/Descriptions/level_01.tres" id="2_el84l"]
 [ext_resource type="PackedScene" uid="uid://bj5rdiyxps3ha" path="res://Scenes/level_02.tscn" id="3_x5qhn"]
 [ext_resource type="Texture2D" uid="uid://dh6m1qywe5bsk" path="res://Assets/Backgrounds/purple.png" id="4_vpfhu"]
 
 [node name="Level01" instance=ExtResource("1_0bies")]
+script = ExtResource("1_il3we")
 next_scene = ExtResource("3_x5qhn")
 level_description = ExtResource("2_el84l")
 
@@ -14,6 +16,58 @@ texture = ExtResource("4_vpfhu")
 
 [node name="EnemySpawnTimer" parent="." index="2"]
 wait_time = 2.0
+autostart = false
 
 [node name="CongratulationsLabel" parent="." index="5"]
 text = "Meus parabéns, Você superou à primeira horda de inimigos"
+
+[node name="TutorialMenu" type="CanvasLayer" parent="." index="6"]
+process_mode = 3
+
+[node name="Label" type="Label" parent="TutorialMenu" index="0"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -177.0
+offset_top = -88.0
+offset_right = 183.0
+offset_bottom = -70.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Movimentação: WSAD ou Setinhas"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="TutorialMenu" index="1"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -221.0
+offset_top = -47.5
+offset_right = 221.0
+offset_bottom = 33.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Tiros: 
+Mouse Esquerdo - Tiro modo automático
+F: Tiro modo rajada
+G: Tiro único"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="TutorialMenu" index="2"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -221.0
+offset_top = 63.5
+offset_right = 221.0
+offset_bottom = 144.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Pressione ESC para pausar o jogo"
+horizontal_alignment = 1
