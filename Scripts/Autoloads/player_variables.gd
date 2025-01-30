@@ -29,6 +29,10 @@ func increase_score(count: int = SCORE_INCREMENT) -> void:
 		score += count
 	else:
 		score = MAX_SCORE
+	
+	if score > GameState.best_score:
+		GameState.best_score = score
+		GameState.save_score()
 
 func decrease_score(count: int = SCORE_DECREMENT) -> void:
 	if (score - count) > 0:

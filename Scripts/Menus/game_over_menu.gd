@@ -12,6 +12,8 @@ func _ready() -> void:
 	play_button.pressed.connect(_on_play_button_pressed)
 	config_button.pressed.connect(_on_config_button_pressed)
 	return_button.pressed.connect(_on_return_button_pressed)
+	
+	GameState.save_score()
 
 func _on_play_button_pressed() -> void:
 	PlayerVariables.reset()

@@ -53,6 +53,14 @@ offset_bottom = 634.0
 text = "Créditos"
 flat = true
 
+[node name="ScoreButton" type="Button" parent="CanvasLayer"]
+offset_left = 16.0
+offset_top = 608.0
+offset_right = 123.0
+offset_bottom = 634.0
+text = "pLACAR"
+flat = true
+
 [node name="Buttons" type="HBoxContainer" parent="CanvasLayer"]
 anchors_preset = 14
 anchor_top = 0.5

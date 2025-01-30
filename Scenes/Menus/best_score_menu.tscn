@@ -1,0 +1,70 @@
+[gd_scene load_steps=6 format=3 uid="uid://bv7aeax2vp0cs"]
+
+[ext_resource type="Script" path="res://Scripts/Menus/best_score_menu.gd" id="1_7ura5"]
+[ext_resource type="PackedScene" uid="uid://b5adnylpguwhk" path="res://Prefabs/Utils/animated_background.tscn" id="2_fcbx1"]
+[ext_resource type="PackedScene" uid="uid://vpiei14eobpd" path="res://Prefabs/Utils/UI/Buttons/return_button.tscn" id="3_jusxv"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0corh"]
+font_size = 65
+outline_size = 10
+outline_color = Color(0.372549, 0.372549, 0.372549, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_m31l4"]
+font_size = 35
+
+[node name="BestScoreMenu" type="CanvasLayer"]
+process_mode = 3
+layer = 2
+script = ExtResource("1_7ura5")
+
+[node name="AnimatedBackground" parent="." instance=ExtResource("2_fcbx1")]
+
+[node name="Title" type="Label" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 66.0
+offset_bottom = 140.0
+grow_horizontal = 2
+text = "PLACAR"
+label_settings = SubResource("LabelSettings_0corh")
+horizontal_alignment = 1
+
+[node name="Score" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -176.0
+offset_top = -68.0
+offset_right = 191.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="Score"]
+layout_mode = 2
+text = "Melhor PLACAR"
+label_settings = SubResource("LabelSettings_m31l4")
+horizontal_alignment = 1
+
+[node name="Value" type="Label" parent="Score"]
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_m31l4")
+horizontal_alignment = 1
+
+[node name="Buttons" type="HBoxContainer" parent="."]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = 140.0
+offset_bottom = 291.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 100
+alignment = 1
+
+[node name="ReturnButton" parent="Buttons" instance=ExtResource("3_jusxv")]
+layout_mode = 2

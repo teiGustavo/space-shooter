@@ -40,6 +40,8 @@ func _physics_process(delta: float) -> void:
 	enemies_alive = get_tree().get_nodes_in_group('enemies').size()
 	
 	if enemies_alive == 0 and enemies_left == 0:	
+		GameState.save_score()
+		
 		if not congratulations_label.visible:
 			congratulations_label.show()
 			congratulations_label.modulate.a = 0

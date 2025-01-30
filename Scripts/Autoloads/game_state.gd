@@ -2,6 +2,7 @@ extends Node
 
 
 const VOLUMES_FILE_PATH: String = "user://volumes.save"
+const SCORES_FILE_PATH: String = "user://scores.save"
 const MUSIC: AudioStream = preload("res://Assets/Sounds/music.wav")
 
 var volumes: Dictionary = {
@@ -10,10 +11,12 @@ var volumes: Dictionary = {
 	"music": 1,
 	"ambient_sound": 1,
 }
+var best_score: int
 
 
 func _ready() -> void:
 	set_all_audio_configs()
+	load_score()
 	
 func save_volumes() -> void:
 	JSONSaveManager.save(VOLUMES_FILE_PATH, volumes)
@@ -23,6 +26,15 @@ func load_volumes() -> void:
 		
 	if loaded_volumes:
 		volumes = loaded_volumes
+		
+func save_score() -> void:
+	JSONSaveManager.save(SCORES_FILE_PATH, best_score)
+
+func load_score() -> void:
+	var loaded_score: Variant = JSONSaveManager.load(SCORES_FILE_PATH)
+		
+	if loaded_score:
+		best_score = loaded_score
 			
 func set_all_audio_configs() -> void:
 	load_volumes()
