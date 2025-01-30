@@ -25,6 +25,7 @@ GlobalFunctions="*res://Scripts/Autoloads/global_functions.gd"
 PlayerVariables="*res://Scripts/Autoloads/player_variables.gd"
 GameState="*res://Scripts/Autoloads/game_state.gd"
 SoundManager="*res://addons/sound_manager/sound_manager.gd"
+TransitionManager="*res://Prefabs/Utils/transition_manager.tscn"
 
 [display]
 

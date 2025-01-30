@@ -164,6 +164,7 @@ texture = ExtResource("6_y086j")
 stretch_mode = 2
 
 [node name="Digits" type="HBoxContainer" parent="EnemiesLeft"]
+layout_mode = 0
 offset_left = 40.0
 offset_top = 3.0
 offset_right = 142.0

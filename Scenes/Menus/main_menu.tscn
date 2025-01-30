@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://b03f3jq8g8n2r"]
+[gd_scene load_steps=14 format=3 uid="uid://b03f3jq8g8n2r"]
 
 [ext_resource type="Script" path="res://Scripts/Menus/main_menu.gd" id="1_tas6b"]
 [ext_resource type="PackedScene" uid="uid://cdq6jiymlqywp" path="res://Prefabs/Utils/UI/Buttons/play_button.tscn" id="2_gtwqp"]
@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://db7ka87ecrmqv" path="res://Prefabs/Characters/Enemies/enemy_4.tscn" id="5_gevam"]
 [ext_resource type="PackedScene" uid="uid://d1gce2dt053ks" path="res://Prefabs/Characters/Enemies/enemy_5.tscn" id="6_a4gw4"]
 [ext_resource type="Script" path="res://Scripts/Models/level_description.gd" id="7_e1wlx"]
-[ext_resource type="PackedScene" uid="uid://cekjnaxik8xp0" path="res://Scenes/Menus/credits_menu.tscn" id="7_q3p2g"]
 [ext_resource type="PackedScene" uid="uid://b5adnylpguwhk" path="res://Prefabs/Utils/animated_background.tscn" id="8_30v4r"]
 [ext_resource type="PackedScene" uid="uid://cf8bi1o8a4xta" path="res://Scenes/Menus/config_menu.tscn" id="9_ruepf"]
 
@@ -82,7 +81,4 @@ wait_time = 2.0
 autostart = true
 
 [node name="ConfigMenu" parent="." instance=ExtResource("9_ruepf")]
-visible = false
-
-[node name="CreditsMenu" parent="." instance=ExtResource("7_q3p2g")]
 visible = false

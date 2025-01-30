@@ -2,7 +2,6 @@ class_name MainMenu
 extends Node2D
 
 
-const LEVEL_01: Resource = preload("res://Scenes/level_01.tscn")
 const CURSOR: Resource = preload("res://Assets/PNG/UI/cursor.png")
 
 @export var level_description: LevelDescription
@@ -15,7 +14,6 @@ var enemy_variations: Array[PackedScene]
 @onready var exit_button: TextureButton = $CanvasLayer/Buttons/ExitButton/TextureButton
 @onready var credits_button: Button = $CanvasLayer/CreditsButton
 @onready var config_menu: BasePopupMenu = $ConfigMenu
-@onready var credits_menu: CanvasLayer = $CreditsMenu
 
 
 func _ready() -> void:
@@ -29,7 +27,7 @@ func _ready() -> void:
 	enemy_variations = level_description.enemy_variations
 
 func _on_start_button_pressed() -> void:
-	get_tree().change_scene_to_packed(LEVEL_01)
+	TransitionManager.fade_to_scene("res://Scenes/level_01.tscn")
 	
 func _on_quit_button_pressed() -> void:
 	get_tree().quit()
@@ -38,7 +36,7 @@ func _on_config_button_pressed() -> void:
 	config_menu.show()
 	
 func _on_credits_button_pressed() -> void:
-	credits_menu.show()
+	TransitionManager.fade_to_scene("res://Scenes/Menus/credits_menu.tscn")
 	
 func _spawn_enemy():
 	GlobalFunctions.spawn_enemy(

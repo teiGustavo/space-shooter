@@ -35,10 +35,11 @@ anchor_right = 1.0
 offset_top = 227.0
 offset_bottom = 396.0
 grow_horizontal = 2
-text = "Gustavo Teixeira
+text = "Diogo Vinicius
+Gabriela Moreno
+Gustavo Teixeira
 Paulo Ceza
-Diogo Vinicius
-Gabriela Moreno"
+"
 label_settings = SubResource("LabelSettings_m31l4")
 horizontal_alignment = 1
 
