@@ -2,17 +2,14 @@
 
 [ext_resource type="PackedScene" uid="uid://yteoqqp3ok74" path="res://Scenes/base_level.tscn" id="1_0bies"]
 [ext_resource type="Script" path="res://Scripts/Game/level_01.gd" id="1_il3we"]
-[ext_resource type="Resource" uid="uid://dpey0etjfk3wi" path="res://Data/Levels/Descriptions/level_01.tres" id="2_el84l"]
-[ext_resource type="PackedScene" uid="uid://bj5rdiyxps3ha" path="res://Scenes/level_02.tscn" id="3_x5qhn"]
+[ext_resource type="PackedScene" uid="uid://bj5rdiyxps3ha" path="res://Scenes/level_02.tscn" id="3_l54lq"]
+[ext_resource type="Resource" uid="uid://dpey0etjfk3wi" path="res://Data/Levels/Descriptions/level_01.tres" id="4_edj4l"]
 [ext_resource type="Texture2D" uid="uid://dh6m1qywe5bsk" path="res://Assets/Backgrounds/purple.png" id="4_vpfhu"]
 
 [node name="Level01" instance=ExtResource("1_0bies")]
 script = ExtResource("1_il3we")
-next_scene = ExtResource("3_x5qhn")
-level_description = ExtResource("2_el84l")
-ENEMY_INITIAL_SPEED = 3.0
-ENEMY_MAX_SPEED = 3.0
-BACKGROUND_MAX_SPEED = 250.0
+next_scene = ExtResource("3_l54lq")
+level_description = ExtResource("4_edj4l")
 
 [node name="AnimatedBackground" parent="." index="0"]
 texture = ExtResource("4_vpfhu")
@@ -29,6 +26,7 @@ text = "Meus parabéns, Você superou à primeira horda de inimigos"
 
 [node name="TutorialMenu1" type="CanvasLayer" parent="." index="6"]
 process_mode = 3
+visible = false
 
 [node name="Label" type="Label" parent="TutorialMenu1" index="0"]
 anchors_preset = 8
@@ -132,4 +130,4 @@ offset_left = 24.0
 offset_top = 576.0
 offset_right = 597.0
 offset_bottom = 664.0
-text = "Quantidade de inimigos da horda"
+text = "Quantidade de inimigos restantes da horda"

@@ -25,7 +25,7 @@ var enemies_alive: int = 0
 @onready var congratulations_label: Label = $CongratulationsLabel
 
 
-func _ready() -> void:	
+func _ready() -> void:
 	enemies_left = level_description.horde_size
 
 	enemy_spawn_timer.timeout.connect(_on_enemy_spawn_timer_timeout)
