@@ -1,6 +1,6 @@
 # SPACE SHOOTER
 
-### Integrantes: Diogo Vinicius Pereira, Gabriella Moreno Silveira Louzada, Gustavo Teixeira de Sousa, Paulo Ceza Paula da Paixa
+### Integrantes: Diogo Vinicius Pereira, Gabriella Moreno Silveira Louzada, Gustavo Teixeira de Sousa, Paulo Ceza Paula da Paixão Pereira
 
 #### Game Design Document: [Clique aqui](./Game%20Design%20Document%20-%20Space%20shooter.pdf)
 
